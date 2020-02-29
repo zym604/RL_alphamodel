@@ -128,6 +128,8 @@ n_actions = env.action_space.n
 policy_net = DQN(screen_height, screen_width, n_actions).to(device)
 target_net = DQN(screen_height, screen_width, n_actions).to(device)
 target_net.load_state_dict(policy_net.state_dict())
+#model.eval() will notify all your layers that you are in eval mode, that way, batchnorm or dropout layers will work in eval mode instead of training mode.
+#eval()告诉电脑你是在evaluate mode而不是training mode，这种mode下batchnorm和dropout layers会生效，用来更好的避免overfitting。
 target_net.eval()
 
 optimizer = optim.RMSprop(policy_net.parameters())
@@ -186,6 +188,7 @@ def optimize_model():
     print("come!")
     # Compute a mask of non-final states and concatenate the batch elements
     # (a final state would've been the one after which simulation ended)
+    # non_final_mask就是batch中next_state不是none的项，也就是之后不会gg的data，之后马上gg的data学了也没用
     non_final_mask = torch.tensor(tuple(map(lambda s: s is not None,
                                           batch.next_state)), device=device, dtype=torch.bool)
     non_final_next_states = torch.cat([s for s in batch.next_state
@@ -193,7 +196,6 @@ def optimize_model():
     state_batch = torch.cat(batch.state)
     action_batch = torch.cat(batch.action)
     reward_batch = torch.cat(batch.reward)
-    # 同步测试
     # Compute Q(s_t, a) - the model computes Q(s_t), then we select the
     # columns of actions taken. These are the actions which would've been taken
     # for each batch state according to policy_net
@@ -204,6 +206,7 @@ def optimize_model():
     # on the "older" target_net; selecting their best reward with max(1)[0].
     # This is merged based on the mask, such that we'll have either the expected
     # state value or 0 in case the state was final.
+
     next_state_values = torch.zeros(BATCH_SIZE, device=device)
     next_state_values[non_final_mask] = target_net(non_final_next_states).max(1)[0].detach()
     # Compute the expected Q values
@@ -213,13 +216,19 @@ def optimize_model():
     loss = F.smooth_l1_loss(state_action_values, expected_state_action_values.unsqueeze(1))
 
     # Optimize the model
+    #Hopefully, you use them in the other order - opt.zero_grad(), loss.backward(), opt.step().
+    #  zero_grad clears old gradients from the last step (otherwise you’d just accumulate the gradients from all loss.backward() calls).
+    #  loss.backward() computes the derivative of the loss w.r.t. the parameters (or anything requiring gradients) using backpropagation.
+    #  opt.step() causes the optimizer to take a step based on the gradients of the parameters.
     optimizer.zero_grad()
     loss.backward()
+    # https://discuss.pytorch.org/t/gradient-clipping/2836
+    # Gradient clipping 顾名思义，把太大的gradient裁剪掉，就是一刀切，其他不大的gradient保持原样，从来防止exploding gradients梯度爆炸
     for param in policy_net.parameters():
         param.grad.data.clamp_(-1, 1)
     optimizer.step()
 
-num_episodes = 7
+num_episodes = 10
 for i_episode in range(num_episodes):
     print("i_episode",i_episode)
     # Initialize the environment and state
