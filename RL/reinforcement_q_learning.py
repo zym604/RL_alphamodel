@@ -239,6 +239,8 @@ for i_episode in range(num_episodes):
     for t in count():
         # Select and perform an action
         action = select_action(state)
+        # 这一句修改一下，让env同时也输出当前state，
+        # 这样每次循环就只用跑一次quantconnect，否则分开就要跑两次
         _, reward, done, _ = env.step(action.item())
         reward = torch.tensor([reward], device=device)
 
