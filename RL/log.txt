@@ -1,0 +1,33 @@
+2020-03-02T14:09:25.0156000Z TRACE:: Config.Get(): Configuration key not found. Key: data-directory - Using default value: ../../../Data/
+2020-03-02T14:09:25.0156000Z TRACE:: Config.Get(): Configuration key not found. Key: version-id - Using default value: 
+2020-03-02T14:09:25.0156000Z TRACE:: Config.Get(): Configuration key not found. Key: cache-location - Using default value: ../../../Data/
+2020-03-02T14:09:25.0156000Z TRACE:: Engine.Main(): LEAN ALGORITHMIC TRADING ENGINE v2.4.0.0 Mode: DEBUG (64bit)
+2020-03-02T14:09:25.0165994Z TRACE:: Engine.Main(): Started 9:09 AM
+2020-03-02T14:09:25.0175960Z TRACE:: Config.Get(): Configuration key not found. Key: api-access-token - Using default value: 
+2020-03-02T14:09:25.0185925Z TRACE:: Config.GetValue(): job-user-id - Using default value: 0
+2020-03-02T14:09:25.0195897Z TRACE:: Config.GetValue(): job-project-id - Using default value: 0
+2020-03-02T14:09:25.0195897Z TRACE:: Config.Get(): Configuration key not found. Key: algorithm-language - Using default value: 
+2020-03-02T14:09:25.0275679Z TRACE:: Python for .NET Assembly: Python.Runtime, Version=1.0.5.29, Culture=neutral, PublicKeyToken=null
+2020-03-02T14:09:25.0674611Z TRACE:: Python for .NET Assembly: nPython, Version=1.0.5.29, Culture=neutral, PublicKeyToken=null
+2020-03-02T14:09:43.4066866Z TRACE:: Config.Get(): Configuration key not found. Key: data-directory - Using default value: ../../../Data/
+2020-03-02T14:09:43.4066866Z TRACE:: Config.Get(): Configuration key not found. Key: version-id - Using default value: 
+2020-03-02T14:09:43.4066866Z TRACE:: Config.Get(): Configuration key not found. Key: cache-location - Using default value: ../../../Data/
+2020-03-02T14:09:43.4076842Z TRACE:: Engine.Main(): LEAN ALGORITHMIC TRADING ENGINE v2.4.0.0 Mode: DEBUG (64bit)
+2020-03-02T14:09:43.4076842Z TRACE:: Engine.Main(): Started 9:09 AM
+2020-03-02T14:09:43.4087099Z TRACE:: Config.Get(): Configuration key not found. Key: api-access-token - Using default value: 
+2020-03-02T14:09:43.4097092Z TRACE:: Config.GetValue(): job-user-id - Using default value: 0
+2020-03-02T14:09:43.4097092Z TRACE:: Config.GetValue(): job-project-id - Using default value: 0
+2020-03-02T14:09:43.4097092Z TRACE:: Config.Get(): Configuration key not found. Key: algorithm-language - Using default value: 
+2020-03-02T14:09:43.4166877Z TRACE:: Python for .NET Assembly: Python.Runtime, Version=1.0.5.29, Culture=neutral, PublicKeyToken=null
+2020-03-02T14:09:43.4587888Z TRACE:: Python for .NET Assembly: nPython, Version=1.0.5.29, Culture=neutral, PublicKeyToken=null
+2020-03-02T14:12:39.1404063Z TRACE:: Config.Get(): Configuration key not found. Key: data-directory - Using default value: ../../../Data/
+2020-03-02T14:12:39.1404063Z TRACE:: Config.Get(): Configuration key not found. Key: version-id - Using default value: 
+2020-03-02T14:12:39.1404063Z TRACE:: Config.Get(): Configuration key not found. Key: cache-location - Using default value: ../../../Data/
+2020-03-02T14:12:39.1404063Z TRACE:: Engine.Main(): LEAN ALGORITHMIC TRADING ENGINE v2.4.0.0 Mode: DEBUG (64bit)
+2020-03-02T14:12:39.1404063Z TRACE:: Engine.Main(): Started 9:12 AM
+2020-03-02T14:12:39.1404063Z TRACE:: Config.Get(): Configuration key not found. Key: api-access-token - Using default value: 
+2020-03-02T14:12:39.1404063Z TRACE:: Config.GetValue(): job-user-id - Using default value: 0
+2020-03-02T14:12:39.1404063Z TRACE:: Config.GetValue(): job-project-id - Using default value: 0
+2020-03-02T14:12:39.1404063Z TRACE:: Config.Get(): Configuration key not found. Key: algorithm-language - Using default value: 
+2020-03-02T14:12:39.1404063Z TRACE:: Python for .NET Assembly: Python.Runtime, Version=1.0.5.29, Culture=neutral, PublicKeyToken=null
+2020-03-02T14:12:39.1872698Z TRACE:: Python for .NET Assembly: nPython, Version=1.0.5.29, Culture=neutral, PublicKeyToken=null
