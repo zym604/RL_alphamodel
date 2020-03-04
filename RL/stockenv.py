@@ -40,6 +40,7 @@ class stockenv:
 env = stockenv()
 env.reset()
 state = env.getstate()
+
 for s in state:
     print(s)
 
