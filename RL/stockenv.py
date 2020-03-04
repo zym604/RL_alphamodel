@@ -18,6 +18,8 @@ class stockenv:
         source2 = self.workspace + r'\RL\quantconnect_setup_files\BasicTemplateAlgorithm.py'
         destination2 = self.root + r'\Algorithm.Python\BasicTemplateAlgorithm.py'
         shutil.copyfile(source2, destination2)
+        import subprocess
+        subprocess.call(self.workspace + r'\interact_lLean\1build_the_project.bat')
     def getexeoutput(self):
         import subprocess
         p1 = subprocess.Popen(self.path,cwd=self.folder,stdin=subprocess.PIPE,stdout=subprocess.PIPE, shell=True)
