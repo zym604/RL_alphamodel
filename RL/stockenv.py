@@ -10,8 +10,9 @@ class stockenv:
         self.path = self.folder + r'\QuantConnect.Lean.Launcher.exe'
         self.workspace = r'E:\Google\stock'
     def reset(self):
-        import shutil 
+        print("start reset ...")
         self.histry_action = []
+        import shutil 
         source = self.workspace + r'\RL\quantconnect_setup_files\config.json'
         destination = self.root + r'\Launcher\config.json'
         shutil.copyfile(source, destination)
@@ -19,7 +20,9 @@ class stockenv:
         destination2 = self.root + r'\Algorithm.Python\BasicTemplateAlgorithm.py'
         shutil.copyfile(source2, destination2)
         import subprocess
-        subprocess.call(self.workspace + r'\interact_lLean\1build_the_project.bat')
+        p1 = subprocess.Popen(self.workspace + r'\interact_lLean\1build_the_project.bat',stdin=subprocess.PIPE,stdout=subprocess.PIPE, shell=True)
+        p1.communicate()[0]
+        print("finish reset ...")
     def getexeoutput(self):
         import subprocess
         p1 = subprocess.Popen(self.path,cwd=self.folder,stdin=subprocess.PIPE,stdout=subprocess.PIPE, shell=True)
@@ -52,8 +55,8 @@ env = stockenv()
 env.reset()
 state = env.getstate()
 
-for s in state:
-    print(s)
+print(state[0])
+print(state[3])
 
 # for action in [60,20,70,40,10]:
 #     state, reward, done = env.step(action)
