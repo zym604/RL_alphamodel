@@ -5,10 +5,19 @@ class stockenv:
         self.action_space = [0,10,20,30,40,50,60,70,80,90,100]
         self.action_number = len(self.action_space)
         self.histry_action = []
-        self.folder = r'E:\Lean-master\Launcher\bin\Debug'
-        self.path = r'E:\Lean-master\Launcher\bin\Debug\QuantConnect.Lean.Launcher.exe'
+        self.root = r'E:\Lean-master'
+        self.folder = self.root + r'\Launcher\bin\Debug'
+        self.path = self.folder + r'\QuantConnect.Lean.Launcher.exe'
+        self.workspace = r'E:\Google\stock'
     def reset(self):
+        import shutil 
         self.histry_action = []
+        source = self.workspace + r'\RL\quantconnect_setup_files\config.json'
+        destination = self.root + r'\Launcher\config.json'
+        shutil.copyfile(source, destination)
+        source2 = self.workspace + r'\RL\quantconnect_setup_files\BasicTemplateAlgorithm.py'
+        destination2 = self.root + r'\Algorithm.Python\BasicTemplateAlgorithm.py'
+        shutil.copyfile(source2, destination2)
     def getexeoutput(self):
         import subprocess
         p1 = subprocess.Popen(self.path,cwd=self.folder,stdin=subprocess.PIPE,stdout=subprocess.PIPE, shell=True)
