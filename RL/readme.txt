@@ -1,0 +1,4 @@
+documental_code用来储存代码过程中参考的好代码，基本没用，摆着防止以后忘了
+
+stockenv.py是用于连接quantconnect的env环境
+quantconnect_setup_files是配合stockenv.py工作的，用来储存一些stockenv.py需要的临时文件
