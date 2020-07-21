@@ -14,10 +14,11 @@ from tianshou.exploration import GaussianNoise
 from tianshou.utils.net.common import Net
 from tianshou.utils.net.continuous import Actor, Critic
 
+from stockenv import stockenv
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--justplot', type=bool, default=True)
+    parser.add_argument('--justplot', type=bool, default=False)
     parser.add_argument('--task', type=str, default='Pendulum-v0')
     parser.add_argument('--seed', type=int, default=0)
     parser.add_argument('--buffer-size', type=int, default=20000)

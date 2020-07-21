@@ -1,6 +1,6 @@
 #_, reward, done, _ = env.step(action.item())
 # action就是离散化的insight，在0-100之间
-class stockenv:
+class stockenv():
     def __init__(self):
         self.action_space = [0,10,20,30,40,50,60,70,80,90,100]
         self.action_number = len(self.action_space)

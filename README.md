@@ -1,2 +1,5 @@
 interact_lLean用于储存与lean交互的代码
+
 RL用于储存强化学习的代码
+
+log用于储存强化学习的输出结果
