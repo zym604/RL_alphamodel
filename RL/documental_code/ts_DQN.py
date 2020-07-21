@@ -45,7 +45,7 @@ test_collector = ts.data.Collector(policy, test_envs)
 result = ts.trainer.offpolicy_trainer(
     policy, train_collector, test_collector, epoch, step_per_epoch, collect_per_step,
     test_num, batch_size, train_fn=lambda e: policy.set_eps(eps_train),
-    test_fn=lambda e: policy.set_eps(eps_test),
+#    test_fn=lambda e: policy.set_eps(eps_test),
     stop_fn=lambda x: x >= env.spec.reward_threshold, writer=writer, task=task)
 print(f'Finished training! Use {result["duration"]}')
 torch.save(policy.state_dict(), 'dqn.pth')
