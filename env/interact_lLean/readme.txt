@@ -1,0 +1,2 @@
+1build_the_project.bat是用来编译lean的
+2getexeresult.py是用来在python里运行lean的，在RL的env里也有，这里只是用作测试，确保能用

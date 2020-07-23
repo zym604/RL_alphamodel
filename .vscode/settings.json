@@ -1,4 +1,3 @@
 {
-    "python.pythonPath": "C:\\ProgramData\\Anaconda3\\python.exe",
-    "python.linting.pylintPath": "C:\\ProgramData\\Anaconda3\\pkgs\\pylint-1.8.4-py36_0\\Scripts\\pylint"
+    "python.pythonPath": "/root/anaconda3/envs/quant/bin/python",
 }

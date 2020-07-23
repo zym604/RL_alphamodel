@@ -1,4 +1,4 @@
-interact_lLean用于储存与lean交互的代码
+env用于储存与交易软件交互的代码
 
 RL用于储存强化学习的代码
 
